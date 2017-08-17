@@ -61,7 +61,7 @@ var app=angular.module('app',['ionic']);
 /*define CONTROLLERS & CONFIGS*/
 /******************************/
 app.service('DataService', function($http){
-	var url="https://script.google.com/macros/s/AKfycby-rly573PVf86O96Tjl8Z2v_ewAntf74VMKQeXIgowtUSis0Q/exec";
+	var url="https://script.google.com/macros/s/AKfycbwztSkQKLJXcxXMDUSZnZ1reubsaX-_0-an2av3cYX6hjaKYxw/exec";
 	return {   
 		getItems: function(){
 			return $http.get(url+"?cmd=getrecords").then(function(response){
@@ -113,7 +113,6 @@ var sendparameters=Object.keys($scope.person).map((i)=>i+'='+$scope.person[i]).j
      })
      .finally(function(){ /* in the end*/
        $ionicLoading.hide(); /* hide loading icon*/
-        $scope.callService();
      });           
 }
   
@@ -129,7 +128,6 @@ $scope.callService = function() {
      })
      .finally(function(){ /* in the end*/
        $ionicLoading.hide(); /* hide loading icon*/
-    
      });           
 };
   
